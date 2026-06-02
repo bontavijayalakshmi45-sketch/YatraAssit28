@@ -9,8 +9,9 @@ import { BudgetPage } from './pages/BudgetPage';
 import { DestinationsPage } from './pages/DestinationsPage';
 import { TripsPage } from './pages/TripsPage';
 import { AuthPage } from './pages/AuthPage';
+import { AdminPage } from './pages/AdminPage';
 
-export type Page = 'home' | 'chat' | 'itinerary' | 'budget' | 'destinations' | 'trips' | 'auth';
+export type Page = 'home' | 'chat' | 'itinerary' | 'budget' | 'destinations' | 'trips' | 'auth' | 'admin';
 
 function AppContent() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -31,6 +32,8 @@ function AppContent() {
         return <TripsPage />;
       case 'auth':
         return <AuthPage onBack={() => setCurrentPage('home')} />;
+      case 'admin':
+        return <AdminPage />;
       default:
         return <HomePage onNavigate={setCurrentPage} />;
     }

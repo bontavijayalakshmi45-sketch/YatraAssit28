@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, Home, MessageCircle, Map, Calculator, Compass, Briefcase } from 'lucide-react';
+import { Menu, Home, MessageCircle, Map, Calculator, Compass, Briefcase, BarChart3 } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTheme } from '../../contexts/ThemeContext';
 import { Page } from '../../App';
@@ -25,6 +25,7 @@ export function MainLayout({ children, currentPage, onNavigate }: MainLayoutProp
     { id: 'budget' as Page, label: 'Budget', icon: Calculator },
     { id: 'destinations' as Page, label: 'Explore', icon: Compass },
     { id: 'trips' as Page, label: 'My Trips', icon: Briefcase },
+    { id: 'admin' as Page, label: 'Admin', icon: BarChart3 },
   ];
 
   const handleAuthClick = () => {
